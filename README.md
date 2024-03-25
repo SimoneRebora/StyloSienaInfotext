@@ -9,7 +9,7 @@ Materials and scripts for the Stylometry lessons at the Infotext Master (Univers
 - Rolling Stylometry
 - Zeta Analysis
 
-Slides available [here](https://docs.google.com/presentation/d/13g6NeF7UR2HzbVLrkUxx4GMaakvBb2B2N79wLnitrlo/edit?usp=sharing).
+See all [slides](https://docs.google.com/presentation/d/13g6NeF7UR2HzbVLrkUxx4GMaakvBb2B2N79wLnitrlo/edit?usp=sharing) and [references](https://www.zotero.org/groups/5463648/stylosienainfotext/collections/DTK2GV97).
 
 ## Day 2
 
@@ -17,7 +17,7 @@ Slides available [here](https://docs.google.com/presentation/d/13g6NeF7UR2HzbVLr
 - Stylometry Features
 - The "impostors"
 
-Slides available [here](https://docs.google.com/presentation/d/1ym6gstKUPy0jkCmKA0AO2Y5Rnl4lDhSvPd7hPncqypg/edit?usp=sharing).
+See all [slides](https://docs.google.com/presentation/d/1ym6gstKUPy0jkCmKA0AO2Y5Rnl4lDhSvPd7hPncqypg/edit?usp=sharing) and [references](https://www.zotero.org/groups/5463648/stylosienainfotext/collections/3VS4VJTF).
 
 # Corpus
 
