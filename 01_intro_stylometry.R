@@ -53,16 +53,17 @@ stylo.network(mfw.min=200,
 # Your turn!
 #####
 
-# repeat the whole procedure with a different corpus 
-# e.g. the one you can download from here: 
-# https://owncloud.gwdg.de/index.php/s/gEUqXv1fOcnsUrb/download
-# (based on the German Eltec Corpus, DOI: 10.5281/zenodo.3524908)
-# 
-# # Suggested procedure
-# rename the "corpus" folder in PositCloud (so you are not overwriting it),
+# attribute the "anonymous" text available here:
+# https://univr-my.sharepoint.com/:t:/g/personal/simone_rebora_univr_it/EZlMlE4wr3VMrogIWEK0LfoBLCo6-AghS5NJw31kx2964Q?e=YUbok0
+ 
+# Suggested procedure:
+# download the "ANONYMOUS.txt" file to your computer 
+# move to the "corpus" folder in the "Files" panel in PositCloud,
 # then use the "Upload" button in the "Files" panel
-# tip: upload a compressed (.zip) version of the new "corpus" folder,
-# as it will be decompressed automatically in PositCloud
+# and repeat the stylo analysis
+
+# tip: once you finish, delete the "ANONYMOUS.txt" file, 
+# as it might interfere with the following analyses
 
 #####
 # Appendix
