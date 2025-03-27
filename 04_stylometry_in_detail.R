@@ -14,16 +14,14 @@
 
 # Call the packages
 library(stylo)
-library(irr)
 library(e1071)
-library(tidyverse)
-library(reshape2)
 # ...you'll have to do it each time you re-start the project
 
 ### 1. Explore stylo results
 
 # let's run a basic stylo analysis and save the result to a variable
 stylo_result <- stylo(distance.measure="dist.delta",
+                      corpus.lang = "English",
                       mfw.min=100, 
                       mfw.max=100)
 
@@ -52,15 +50,11 @@ my_zscores <- t(word_zscores[1:100,])
 
 # then you calculate the distances using the "manhattan" method
 # for just two texts (the first two)
-my_distance = dist(my_zscores[c(1,2),], method = "manhattan") / length(my_zscores[1,])
+my_distance <- dist(my_zscores[c(1,2),], method = "manhattan") / length(my_zscores[1,])
 my_distance
 
-# for all texts
-all_distances = dist(my_zscores, method = "manhattan") / length(my_zscores[1,])
-all_distances
-
-# create the dendrogram (manually)
-plot(hclust(all_distances, method = "ward.D"))
+# compare it to stylo results
+View(distance_table)
 
 ### 3. Use machine learning
 
@@ -95,81 +89,21 @@ res
 # Your turn!
 #####
 
-# try to make a prediction for a different text
-# you will have to re-run just the last lines of code 
-# (i.e. the "Use machine learning" section)
-# ...by changing a little piece
+# Make the stylometric analysis on a different corpus
+# Three corpora available 
+# (all based on ELTeC: https://www.distant-reading.net/eltec/)
+# Italian 
+# https://bit.ly/4hNdB8A
+# French
+# https://bit.ly/4j6EKVl
+# German
+# https://bit.ly/4l5SFMY
 
-### 4. Make a graph like in the Harry Potter experiment
+# # Suggested procedure
+# rename the "corpus" folder in PositCloud (so you are not overwriting it),
+# then use the "Upload" button in the "Files" panel
+# tip: upload a compressed (.zip) version of the new "corpus" folder,
+# as it will be decompressed automatically in PositCloud
 
-# first, let's select just the first ten z-scores
-zscores_map <- word_zscores[1:10,]
-
-# then we add the names
-zscores_map$words <- rownames(zscores_map)
-
-# ...and we "melt" the table
-zscores_map <- melt(zscores_map)
-colnames(zscores_map) <- c("word", "text", "z_score")
-View(zscores_map)
-
-# finally, we can create the plot
-p1 <- ggplot(data = zscores_map) + 
-  geom_bar(mapping = aes(x = word, y = z_score), stat = "identity") + 
-  facet_wrap(~ text, nrow = 12) +
-  labs(x = "most frequent words")
-
-p1
-
-# we save it in a good format (to make it readable)
-ggsave(p1, filename = "Zscores_map.png", width = 4, height = 20)
-
-### 5. Find most distinctive words
-
-# select just the text that are clustering (e.g. Charlotte Bronte)
-my_texts <- 1:3
-
-zeta_scores <- stylo_result$table.with.all.zscores
-zeta_scores <- zeta_scores[my_texts,1:100]
-
-# calculate variance for each set of zeta scores (per word)
-my_variance <- numeric()
-
-for(i in 1:dim(zeta_scores)[2]){
-  
-  my_variance[i] <- mean(abs(zeta_scores[,i] - mean(zeta_scores[,i])))
-  
-  
-}
-
-# reorder the table based on the variance
-zeta_scores <- as.data.frame(t(zeta_scores))
-zeta_scores$variance <- my_variance
-zeta_scores <- zeta_scores[order(zeta_scores$variance),]
-View(zeta_scores)
-
-# join variance info to the words
-zeta_scores$word <- paste(rownames(zeta_scores), " (variance ", round(zeta_scores$variance, 2), ")", sep = "")
-zeta_scores$variance <- NULL
-
-# prepare first visualization (10 words with least variance)
-zeta_scores_m <- melt(zeta_scores[1:10,], id.vars = "word", value.name = "zeta_value", variable.name = "Style")
-zeta_scores_m$word <- factor(zeta_scores_m$word, levels = zeta_scores$word[1:10])
-
-# make the plot
-p1 <- ggplot(zeta_scores_m, aes(x = Style, y = zeta_value)) +
-  geom_bar(stat = "identity") +
-  facet_wrap(~word, nrow = 2) +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
-  xlab(NULL)
-
-p1
-
-# save it
-ggsave(p1, filename = "Zeta_pos.png", width = 14, height = 10, scale = 0.6)
-
-#####
-# Your turn!
-#####
-
-# find the most distinctive words for another author
+# Note: once finished, remember to delete (or rename) the new "corpus" folder
+# and restore the original one (with the 12 English texts)
