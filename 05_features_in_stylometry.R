@@ -98,3 +98,6 @@ stylo_result$features
 # try different POS ngram selections in the last analysis
 # ...does it improve?
 # Tip: change also the distance measure (see Appendix to "01_intro_stylometry.R" for details)
+
+# Note: once finished, remember to set the working directory back to normal
+# setwd("/cloud/project/")
