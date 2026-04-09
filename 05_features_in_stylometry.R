@@ -77,7 +77,7 @@ cat(result$upos, sep = " ", file = "materials/Doyle_Study_1887_UPOS.txt")
 # see materials/POS_analysis/corpus
 
 # we just need to change the working directory!
-setwd("materials/POS_analysis/")
+setwd("/cloud/project/materials/POS_analysis/")
 # important note: once you change the working directory
 # you will be reading/writing files from there
 
@@ -98,6 +98,10 @@ stylo_result$features
 # try different POS ngram selections in the last analysis
 # ...does it improve?
 # Tip: change also the distance measure (see Appendix to "01_intro_stylometry.R" for details)
+
+# IF THE SYSTEM BREAKS... (if it runs out of memory)
+# re-run just "library(stylo)" (line 22)
+# and then re-run the script directly from part 3 (line 74 and the following)
 
 # Note: once finished, remember to set the working directory back to normal
 # setwd("/cloud/project/")
