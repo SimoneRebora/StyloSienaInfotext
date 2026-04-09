@@ -54,7 +54,7 @@ stylo.network(mfw.min=200,
 #####
 
 # attribute the "anonymous" text available here:
-# https://univr-my.sharepoint.com/:t:/g/personal/simone_rebora_univr_it/EZlMlE4wr3VMrogIWEK0LfoBLCo6-AghS5NJw31kx2964Q?e=YUbok0
+# https://univr-my.sharepoint.com/:t:/g/personal/simone_rebora_univr_it/IQBBJAH7L_L8QqJJCsOIwVfhAfwh1ArjnmWV7RHKQ-cOZ_I?e=8pgV4p
  
 # Suggested procedure:
 # download the "ANONYMOUS.txt" file to your computer 
